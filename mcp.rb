@@ -9,6 +9,7 @@ class Mcp < Formula
 
   def install
     system "go", "build", *std_go_args(ldflags: "-s -w"), "./cmd/mcptools"
+    bin.install_symlink "mcp" => "mcpt"
   end
 
   test do
