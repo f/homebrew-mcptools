@@ -8,9 +8,8 @@ class Mcp < Formula
   depends_on "go" => :build
 
   def install
-    # Extract version from URL (v0.2.0)
-    version_str = url.to_s.match(/\/v(\d+\.\d+\.\d+)\.tar\.gz/)[0]
-    version_str = version_str.sub("/v", "").sub(".tar.gz", "")
+    # Use the version that Homebrew already parsed
+    version_str = version.to_s.sub(/^v/, "")
     
     # Add version to ldflags
     ldflags = %W[
