@@ -20,8 +20,7 @@ class Mcp < Formula
     system "go", "build", *std_go_args(ldflags: ldflags.join(" ")), "./cmd/mcptools"
     
     # Create symlink for alternative name
-    bin.install_symlink bin/"mcptools" => "mcp"
-    bin.install_symlink bin/"mcptools" => "mcpt"
+    bin.install_symlink "mcp" => "mcpt"
     
     # Install templates to user's home directory
     system "make", "templates"
