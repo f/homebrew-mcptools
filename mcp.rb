@@ -19,7 +19,7 @@ class Mcp < Formula
     
     system "go", "build", *std_go_args(ldflags: ldflags.join(" ")), "./cmd/mcptools"
 
-    prefix.install Dir["templates/*"]
+    prefix.install Dir["templates"]
     
     # Create symlink for alternative name
     bin.install_symlink "mcp" => "mcpt"
