@@ -23,7 +23,7 @@ class Mcp < Formula
     bin.install_symlink "mcp" => "mcpt"
     
     # Install templates to user's home directory
-    system "make", "templates"
+    system "make", "install-templates"
   end
 
   def caveats
