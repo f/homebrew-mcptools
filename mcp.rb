@@ -21,27 +21,6 @@ class Mcp < Formula
     
     # Create symlink for alternative name
     bin.install_symlink "mcp" => "mcpt"
-    
-    # Install templates to user's home directory
-    home_dir = system "echo $HOME"
-    templates_dir = File.join(home_dir, '.mcpt', 'templates')
-    templates_source = File.join('.', 'templates')
-
-    puts "Build Path: #{buildpath}"
-    puts "Home Path: #{templates_dir}"
-    puts "Templates Path: #{templates_source}"
-    
-    if Dir.exist?(templates_source)
-      FileUtils.mkdir_p templates_dir
-      FileUtils.cp_r Dir["#{templates_source}/*"], templates_dir
-    end
-  end
-
-  def caveats
-    <<~EOS
-      MCP Tools has been installed as "mcp" and "mcpt".
-      Templates have been installed to ~/.mcpt/templates/
-    EOS
   end
 
   test do
