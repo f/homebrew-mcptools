@@ -1,8 +1,8 @@
 class Mcp < Formula
   desc "Command-line interface for interacting with MCP (Model Context Protocol) servers"
   homepage "https://github.com/f/mcptools"
-  url "https://github.com/f/mcptools/archive/refs/tags/v0.3.6.1.tar.gz"
-  sha256 "5f1c0ad34a4c01aaf065c8d1dedac9660fc8147da5467717b1bd1ebe3683280d"
+  url "https://github.com/f/mcptools/archive/refs/tags/v0.3.6.2.tar.gz"
+  sha256 "3a38ab65e989db827a83e21423cab909414e6042c84bd7812a24037008130d31"
   license "MIT"
 
   depends_on "go" => :build
