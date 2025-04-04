@@ -27,6 +27,7 @@ class Mcp < Formula
     templates_source = "./templates"
 
     puts "Build Path: #{buildpath}"
+    puts "Home Path: #{templates_dir}"
     
     if Dir.exist?(templates_source)
       FileUtils.mkdir_p templates_dir
