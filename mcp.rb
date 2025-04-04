@@ -23,7 +23,7 @@ class Mcp < Formula
     bin.install_symlink "mcp" => "mcpt"
     
     # Install templates to user's home directory
-    home_dir = File.expand_path('~')
+    home_dir = system "echo $HOME"
     templates_dir = File.join(home_dir, '.mcpt', 'templates')
     templates_source = File.join('.', 'templates')
 
