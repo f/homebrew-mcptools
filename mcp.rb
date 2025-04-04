@@ -23,7 +23,7 @@ class Mcp < Formula
     bin.install_symlink "mcp" => "mcpt"
     
     # Install templates to user's home directory
-    templates_dir = "#{ENV["HOME"]}/.mcpt/templates"
+    templates_dir = "~/.mcpt/templates"
     templates_source = "./templates"
 
     puts "Build Path: #{buildpath}"
