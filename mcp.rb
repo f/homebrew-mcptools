@@ -23,8 +23,13 @@ class Mcp < Formula
     bin.install_symlink "mcp" => "mcpt"
     
     # Install templates to user's home directory
-    system "mkdir", "-p", "~/.mcpt/templates"
-    system "cp", "-r", "./templates/*", "~/.mcpt/templates/"
+    templates_dir = "#{ENV["HOME"]}/.mcpt/templates"
+    templates_source = "#{buildpath}/templates"
+    
+    if Dir.exist?(templates_source)
+      FileUtils.mkdir_p templates_dir
+      FileUtils.cp_r Dir["#{templates_source}/*"], templates_dir
+    end
   end
 
   def caveats
@@ -37,4 +42,4 @@ class Mcp < Formula
   test do
     assert_match "MCP is a command line interface", shell_output("#{bin}/mcp --help")
   end
-end 
+end
