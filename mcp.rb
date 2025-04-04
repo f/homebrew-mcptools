@@ -23,11 +23,13 @@ class Mcp < Formula
     bin.install_symlink "mcp" => "mcpt"
     
     # Install templates to user's home directory
-    templates_dir = "~/.mcpt/templates"
-    templates_source = "./templates"
+    home_dir = File.expand_path('~')
+    templates_dir = File.join(home_dir, '.mcpt', 'templates')
+    templates_source = File.join('.', 'templates')
 
     puts "Build Path: #{buildpath}"
     puts "Home Path: #{templates_dir}"
+    puts "Templates Path: #{templates_source}"
     
     if Dir.exist?(templates_source)
       FileUtils.mkdir_p templates_dir
