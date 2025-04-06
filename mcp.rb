@@ -1,8 +1,8 @@
 class Mcp < Formula
   desc "Command-line interface for interacting with MCP (Model Context Protocol) servers"
   homepage "https://github.com/f/mcptools"
-  url "https://github.com/f/mcptools/archive/refs/tags/v0.3.6.3.tar.gz"
-  sha256 "d02e4518161c8c888f978fd538baa17cb0f2917f186a3a25208e85eee8818f41"
+  url "https://github.com/f/mcptools/archive/refs/tags/v0.3.7.tar.gz"
+  sha256 "80f2ee94274999c176baa4b4436ffbfd8c97aac4843f8d4ea30f8f6c863c7ad6"
   license "MIT"
 
   depends_on "go" => :build
@@ -15,6 +15,7 @@ class Mcp < Formula
     ldflags = %W[
       -s -w
       -X main.Version=#{version_str}
+      -X main.TemplatesPath=#{prefix}/templates
     ]
     
     system "go", "build", *std_go_args(ldflags: ldflags.join(" ")), "./cmd/mcptools"
