@@ -3,7 +3,6 @@ class Mcp < Formula
   homepage "https://github.com/f/mcptools"
   url "https://github.com/f/mcptools/archive/refs/tags/v0.4.1.tar.gz"
   sha256 "24fbd5ff0c0fd60036f527fc8690966389c7803b68bc72cd9b900bfd7fc8e860"
-  version "0.4.0"
   license "MIT"
 
   depends_on "go" => :build
