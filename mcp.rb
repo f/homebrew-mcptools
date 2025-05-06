@@ -24,6 +24,7 @@ class Mcp < Formula
     
     # Create symlink for alternative name
     bin.install_symlink "mcp" => "mcpt"
+    bin.install_symlink "mcp" => "mcptools"
   end
 
   test do
